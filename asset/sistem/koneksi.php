@@ -19,3 +19,23 @@ function query($query) {
 
     return $rows;
 }
+
+
+
+function pesan($data) {
+    global $conn;
+    $img_pesanan = htmlspecialchars($data['img_pesanan']);
+    $status = htmlspecialchars($data['status']);
+    $barang_pesanan = htmlspecialchars($data['barang_pesanan']);
+    $nama_penerima = htmlspecialchars($data['nama_penerima']);
+    $alamat_penerima = htmlspecialchars($data['alamat_penerima']);
+    $nomor_penerima = htmlspecialchars($data['nomor_penerima']);
+    $jumlah_pesanan = htmlspecialchars($data['jumlah_pesanan']);
+    $harga_pesanan = htmlspecialchars($data['harga_pesanan']);
+
+    $query = "INSERT INTO pesanan VALUES('','$img_pesanan','$status','$barang_pesanan', '$nama_penerima', '$alamat_penerima', '$nomor_penerima', '$jumlah_pesanan', '$harga_pesanan')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}

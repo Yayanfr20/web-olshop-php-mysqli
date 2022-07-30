@@ -22,6 +22,24 @@ function kurangi() {
 }
 
 
+
+if( isset($_POST['pesan']) ) {
+    if( pesan($_POST) > 0 ) {
+        echo "
+        <script>
+        alert('berhasil dipesan untuk selanjutnya tunggu chat dari admin toko terimakasih');
+        document.location.href = 'index.php';
+        </script>";
+    }else {
+        echo "
+        <script>
+        alert('berhasil dipesan untuk selanjutnya tunggu chat dari admin toko terimakasih');
+        document.location.href = 'index.php';
+
+        </script>";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

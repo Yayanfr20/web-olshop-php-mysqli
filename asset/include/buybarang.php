@@ -7,34 +7,46 @@
 </div>
 
 <div class="input-group mb-3">
-  <input type="hidden" class="form-control" value="<?= $barang['nama_barang']; ?>" aria-label="nophone" aria-describedby="basic-addon1">
+  <!-- img_pesanan -->
+  <input type="hidden" class="form-control" value="<?= $barang['img_barang']; ?>" aria-label="nophone" aria-describedby="basic-addon1" name="img_pesanan">
   <p><?= $barang['nama_barang']; ?></p>
 </div>
 <div class="input-group mb-3">
-  <input type="hidden" class="form-control" value="proses" aria-label="nama" required>
+  <!-- status -->
+  <input type="hidden" class="form-control" value="proses" aria-label="nama" required name="status">
+  <!-- barang_pesanan -->
+  <input type="hidden" class="form-control" value="<?= $barang['nama_barang']; ?>" aria-label="nama" required name="barang_pesanan">
 </div>
 
 <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="nama penerima" aria-label="nama" required>
+  <!-- nama_penerima -->
+  <input type="text" class="form-control" placeholder="nama penerima" aria-label="nama" required name="nama_penerima">
 </div>
 
 <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="alamat lengkap penerima" aria-label="alamat" required>
+  <!-- alamat_penerima -->
+  <input type="text" class="form-control" placeholder="alamat lengkap penerima" aria-label="alamat" required name="alamat_penerima">
 </div>
 
 
 <div class="input-group mb-3">
-  <input type="number" class="form-control" placeholder="nomor handphone" aria-label="nomor handphone" required>
+  <!-- nomor_penerima -->
+  <input type="number" class="form-control" placeholder="nomor handphone" aria-label="nomor handphone" required name="nomor_penerima">
 </div>
 
 <div class="input-group mb-3">
   <a class="btn btn-danger" type="submit" href="buy.php?id=<?= $id; ?>&jumlah=<?php $total = $jumlahProduk - 1; echo $total; ?>">-</a>
-  <input type="text" class="form text-center" value="<?php echo $jumlahProduk; ?>" style="width: 50px;">
+  <!-- jumlah_pesanan -->
+  <input type="text" class="form text-center" value="<?php echo $jumlahProduk; ?>" style="width: 50px;" name="jumlah_pesanan">
   <a class="btn btn-danger" type="submit" href="buy.php?id=<?= $id; ?>&jumlah=<?php $total = $jumlahProduk + 1; echo $total; ?>">+</a>
+</div>
+<div class="input-group mb-3">
+  <!-- harga_pesanan -->
+  <input type="hidden" class="form-control" value="<?= $barang['hargadiskon_barang']; ?>" aria-label="alamat" required name="harga_pesanan">
 </div>
 
 <div class="input-group mb-3">
-  <button class="btn btn-danger">Beli sekarang!</button>
+  <button class="btn btn-danger" name="pesan">Beli sekarang!</button>
 </div>    
 </form>
 </div>
