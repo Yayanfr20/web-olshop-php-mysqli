@@ -37,7 +37,6 @@ $allproduk = query("SELECT * FROM barang WHERE kategori_barang  LIKE '%$kategori
         }
         .card:hover {
             box-shadow:3px 3px 3px grey;
-            padding:3px;
         }
     </style>
 </head>
@@ -56,6 +55,10 @@ $allproduk = query("SELECT * FROM barang WHERE kategori_barang  LIKE '%$kategori
 <div class="garis"></div>
 <?php include 'asset/include/kategorilainnya.php'; ?>
 <!-- end satu kategori -->
+
+<!-- footer -->
+<?php include 'asset/include/footer.php'; ?>
+<!-- end footer -->
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
 </body>

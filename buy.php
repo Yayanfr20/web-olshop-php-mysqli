@@ -1,14 +1,27 @@
 <?php
 // koneksi
 require 'asset/sistem/koneksi.php';
-$jumlahbarang = count(query("SELECT * FROM barang"));
-
-$awalnews = $jumlahbarang - 4;
-$news = query("SELECT * FROM barang LIMIT $awalnews, 4");
-
-$allproduk = query("SELECT * FROM barang");
 
 $allkategori = query("SELECT * FROM kategori");
+
+
+$id = $_GET['id'];
+
+$barang = query("SELECT * FROM barang WHERE id = $id")[0];
+
+$jumlahProduk = $_GET['jumlah'];
+
+function tambah() {
+    $jumlahProduk + 1;
+    echo $jumlahProduk;
+}
+
+function kurangi() {
+    $jumlahProduk - 1;
+    echo $jumlahProduk;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,23 +59,17 @@ $allkategori = query("SELECT * FROM kategori");
 <?php include 'asset/include/header.php'; ?>
 <!-- end header -->
 
-<!-- courcel -->
-<?php include 'asset/include/courcel.php'; ?>
-<!-- end courcel -->
+<!-- barang yang dibeli -->
 
+<?php include 'asset/include/buybarang.php'; ?>
 
-<!-- news -->
-<?php include 'asset/include/news.php'; ?>
-<!-- end news -->
-
-
-<!-- all produk -->
-<?php include 'asset/include/allproduk.php'; ?>
-<!-- all produk -->
+<!-- end barang yang dibeli -->
 
 <!-- footer -->
 <?php include 'asset/include/footer.php'; ?>
 <!-- end footer -->
+
+
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
 </body>

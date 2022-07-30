@@ -37,7 +37,6 @@ $allkategori = query("SELECT * FROM kategori");
         }
         .card:hover {
             box-shadow:3px 3px 3px grey;
-            padding:3px;
         }
     </style>
 </head>
@@ -50,6 +49,9 @@ $allkategori = query("SELECT * FROM kategori");
 <?php include 'asset/include/cariproduk.php';  ?>
 <!-- end barang -->
 
+<!-- footer -->
+<?php include 'asset/include/footer.php'; ?>
+<!-- end footer -->
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
 </body>

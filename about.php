@@ -33,7 +33,6 @@ $aboutas = query("SELECT * FROM about");
         }
         .card:hover {
             box-shadow:3px 3px 3px grey;
-            padding:3px;
         }
     </style>
 </head>
@@ -60,6 +59,10 @@ $aboutas = query("SELECT * FROM about");
 <?php  endforeach; ?>
 <!-- end Yanz shop -->
 </div>
+
+<!-- footer -->
+<?php include 'asset/include/footer.php'; ?>
+<!-- end footer -->
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
 </body>
