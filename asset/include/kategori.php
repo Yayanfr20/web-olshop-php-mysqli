@@ -1,4 +1,4 @@
-<h1 class="text-center mt-5">ALL PRODUK</h1>
+<h1 class="text-center mt-5">PRODUK KATEGORI <span class="text-danger"><?= $_GET['kategori']; ?></span></h1>
 <div class="garis bg-danger"></div>
 <div class="row mt-4 justify-content-around">
 <?php foreach($allproduk as $barang) : ?>

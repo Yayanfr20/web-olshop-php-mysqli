@@ -3,7 +3,7 @@
 <div class="row mt-4 justify-content-around">
 <?php foreach($news as $barang) : ?>
 <div class="card mb-2" style="width: 14rem;">
-  <a href="detail.php?id=<?= $barang['id']; ?>" style="text-decoration:none;">
+  <a href="detail.php?id=<?= $barang['id']; ?>&kategori=<?= $barang['kategori_barang']; ?>" style="text-decoration:none;">
     <img src="asset/img/<?= $barang['img_barang']; ?>" class="card-img-top p-2" height="150px">
     <div class="card-body">
       <h5 class="card-title text-dark">

@@ -1,14 +1,10 @@
 <?php
+// koneksi
 require 'asset/sistem/koneksi.php';
-
-$id = $_GET['id'];
 $kategori = $_GET['kategori'];
-
-$barang = query("SELECT * FROM barang WHERE id = $id")[0];
-$allkategori = query("SELECT * FROM kategori");
-
 $allproduk = query("SELECT * FROM barang WHERE kategori_barang  LIKE '%$kategori%'");
 
+$allkategori = query("SELECT * FROM kategori");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +12,7 @@ $allproduk = query("SELECT * FROM barang WHERE kategori_barang  LIKE '%$kategori
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>|Yanz shop</title>
+    <title>Yanz shop</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
 
@@ -47,15 +43,9 @@ $allproduk = query("SELECT * FROM barang WHERE kategori_barang  LIKE '%$kategori
 <?php include 'asset/include/header.php'; ?>
 <!-- end header -->
 
-<!-- detail barang -->
-<?php include 'asset/include/detailbarang.php'; ?>
-<!-- end detail barang -->
-<div class="batas"></div>
-
-<!-- satu kategori -->
-<div class="garis"></div>
-<?php include 'asset/include/kategorilainnya.php'; ?>
-<!-- end satu kategori -->
+<!-- all produk -->
+<?php include 'asset/include/kategori.php'; ?>
+<!-- all produk -->
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
 </body>

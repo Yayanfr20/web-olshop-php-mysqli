@@ -35,7 +35,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <?php foreach($allkategori as $kategori) : ?>
-                    <li><a class="dropdown-item text-danger fs-5" href="#"><?= $kategori['kategori']; ?></a></li>
+                    <li><a class="dropdown-item text-danger fs-5" href="kategori.php?kategori=<?= $kategori['kategori']; ?>"><?= $kategori['kategori']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
                 </li>
