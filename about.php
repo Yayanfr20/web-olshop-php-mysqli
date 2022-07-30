@@ -3,8 +3,6 @@
 require 'asset/sistem/koneksi.php';
 
 $allkategori = query("SELECT * FROM kategori");
-
-$aboutas = query("SELECT * FROM about");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,19 +42,43 @@ $aboutas = query("SELECT * FROM about");
 
 
 <!-- about Yanz shop -->
-<div class="container text-center " >
-
-
-<h1 class="fs-3 text-danger" style="text-decoration:underline;">ABOUT YANZ SHOP</h1>
+<div class="container" >
+<h1 class=" fs-2 text-dark">Tentang Yanzshop</h1>
+<hr>
+<p style="text-align: left;">
+   Yanzshop adalah toko buku online terpercaya yang menyediakan pilihan buku terbaru, terbaik, dan terlengkap dari semua penerbit di Indonesia. Jenis buku yang dimaksudkan meliputi, novel, kumpulan cerpen, kumpulan puisi, ensiklopedia, komik, board book, dan toy book. Kategorinya meliputi buku Agama & Spiritualitas, buku Bahasa, Pendidikan & Penunjang Pelajaran, buku Biografi & Memoar, buku Anak, buku Impor, buku Ekonomi, Bisnis & Keuangan, buku Fiksi, buku Hiburan, Seni & Budaya, buku Kesehatan & Kecantikan, buku Komik & Novel Grafis, buku Komputer & Teknologi, buku Kuliner, buku Non-Fiksi, buku Parenting & Keluarga, buku Perjalanan, buku Psikologi & Pengembangan Diri, buku Sains & Alam, buku Sastra & Filsafat, buku Sejarah, Sosial, Politik & Hukum, dan masih banyak yang lainnya dengan harga yang menarik.
+</p>
 <br>
-<?php foreach($aboutas as $about) : ?>
-<h2><span class="fs-5"><?= $about['information']; ?></span></h2>
+<h1 class=" fs-2 text-dark">Komitmen Kami</h1>
+<hr>
+<p style="text-align: left;">
+    Semua buku yang tersedia di Yanzshop rata-rata minimal lebih murah 15%  dari harga yang biasa kamu temukan di toko buku konvensional. Diskon tambahan juga dapat berlaku apabila terdapat pre order, promo dari penerbit, dan promo yang diadakan Yanzshop.
+</p>
 <br>
-<h2>Metode Pembayaran <br><span><?= $about['pembayaran']; ?></span><br><img src="asset/img/<?= $about['img_pembayaran']; ?>" alt=""></h2>
-<br>
-<h2>Jasa Pengiriman <br><span><?= $about['pengiriman']; ?></span><br><img src="asset/img/<?= $about['img_pengiriman']; ?>" alt=""></h2>
-
-<?php  endforeach; ?>
+<h1 class=" fs-2 text-dark">Kemudahan Metode Pembayaran</h1>
+<p style="text-align: left;">
+    Yanzshop sebagai toko buku online memberikan fasilitas pelayanan terbaik dengan berbagai pilihan pembayaran terpercaya. Kamu bisa beli buku online dengan memilih satu dari enam metode pembayaran paling mudah yang tersedia di Yanzshop untuk setiap transaksi pemesananmu.
+</p>
+<ol>
+    <li>
+        Kartu kredit
+    </li>
+    <li>
+        Internet banking
+    </li>
+    <li>
+        Uang elektronik (Mandiri e-cash, CIMB Clicks, BCA Klik Pay)
+    </li>
+    <li>
+        Transfer antarbank ke rekening BCA dan Mandiri
+    </li>
+    <li>
+        Indomaret
+    </li>
+    <li>
+        Go-Pay
+    </li>
+</ol>
 <!-- end Yanz shop -->
 </div>
 

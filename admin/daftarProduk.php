@@ -1,9 +1,23 @@
+<?php
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
+ 
+ 
+require 'asset/sistem/koneksi.php';
+
+$allproduk = query("SELECT * FROM barang");
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Yanz shop | opsi admin</title>
+	<title>Yanz shop | Admin panel</title>
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.min.css">
 
@@ -17,12 +31,9 @@
 <?php include 'asset/include/header.php'; ?>
 <!-- end header -->
 
-
-<!-- opsi -->
-
-<?php include 'asset/include/opsiadmin.php'; ?>
-
-<!-- end opsi -->
+<!-- produk -->
+<?php include 'asset/include/tabledaftarproduk.php'; ?>
+<!-- end produk -->
 
 <!-- bootstrap js -->
 <script src="../asset/js/bootstrap.bundle.min.js"></script>

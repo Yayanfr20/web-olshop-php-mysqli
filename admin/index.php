@@ -1,4 +1,11 @@
-<?php 
+<?php
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
+ 
 require 'asset/sistem/koneksi.php';
 
 $jumlahProduk = count(query("SELECT * FROM barang"));
@@ -7,6 +14,9 @@ $jumlahKategori = count(query("SELECT * FROM kategori"));
 $jumlahMassage = count(query("SELECT * FROM massage"));
 $awalmassage = $jumlahMassage - 1;
 $allmassage = query("SELECT * FROM massage LIMIT $awalmassage, 1");
+$allkategori = query("SELECT * FROM kategori");
+
+$jumlahpesanan = count(query("SELECT * FROM pesanan"));
  ?>
 
 <!DOCTYPE html>

@@ -1,9 +1,9 @@
 <h1 class="text-center text-danger" style="margin-top: 30px;">Massage terbaru</h1>
-<div class="container">
+<div class="container"> 
 <?php foreach($allmassage as $massage) : ?>
 <a href="" style="text-decoration: none;">
 <div class="card">
-  <div class="card-header text-secondary d-flex justify-content-between">
+  <div class="card-header text-white bg-danger d-flex justify-content-between">
     <p><?= $massage['email']; ?></p>
     <p><?= $massage['tanggal']; ?></p>
   </div>
