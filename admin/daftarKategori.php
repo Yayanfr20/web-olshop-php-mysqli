@@ -9,8 +9,8 @@ if( !isset($_SESSION["login"]) ) {
  
 require 'asset/sistem/koneksi.php';
 // konfigurasi pagination
-$jumlahProduk = count(query("SELECT * FROM barang"));
-$jumlahDataperhalaman = 4;
+$jumlahProduk = count(query("SELECT * FROM kategori"));
+$jumlahDataperhalaman = 3;
 $jumlahHalaman = ceil($jumlahProduk / $jumlahDataperhalaman);
 if(isset($_GET['halaman'])) {
   $halamanAktif = $_GET['halaman'];
@@ -22,8 +22,7 @@ $awalData = ( $jumlahDataperhalaman * $halamanAktif ) - $jumlahDataperhalaman;
 
 
 
-$allproduk = query("SELECT * FROM barang LIMIT $awalData, $jumlahDataperhalaman");
-
+$allkategoriname = query("SELECT * FROM kategori LIMIT $awalData, $jumlahDataperhalaman");
 $allkategori = query("SELECT * FROM kategori");
 
 if( isset($_POST['buat']) ) {
@@ -65,7 +64,7 @@ if( isset($_POST['buat']) ) {
 <!-- end header -->
 
 <!-- produk -->
-<?php include 'asset/include/tabledaftarproduk.php'; ?>
+<?php include 'asset/include/tabledaftarkategori.php'; ?>
 <!-- end produk -->
 
 <?php include 'asset/include/pagination.php'; ?>

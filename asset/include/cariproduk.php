@@ -12,8 +12,8 @@
             $nama = $barang['nama_barang'];
             $namalimit = substr($nama, 0, $bataskarakter );
             echo $namalimit;?>... </h5> 
-      <p class="card-text text-secondary" style="text-decoration: line-through;">Rp.<?= $barang['harga_barang']; ?></p>
-      <p class="card-text fs-5 text-danger">Rp.<?= $barang['hargadiskon_barang']; ?></p>
+      <p class="card-text text-secondary" style="text-decoration: line-through;">Rp.<?= number_format($barang['harga_barang']); ?></p>
+      <p class="card-text fs-5 text-danger">Rp.<?= number_format($barang['hargadiskon_barang']); ?></p>
       </a>
     </div>
 </div>

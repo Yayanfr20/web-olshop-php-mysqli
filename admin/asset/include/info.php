@@ -11,7 +11,7 @@
 	  <div class="card-body">
 	    <h5 class="card-title">Kategori</h5>
 	    <p class="card-text text-white fs-1"><?= $jumlahKategori; ?></p>
-	    <a href="#" class="btn btn-light text-dark">more</a>
+	    <a href="daftarKategori.php" class="btn btn-light text-dark">more</a>
 	  </div>
 	</div>
 	<div class="card bg-danger text-white mb-3" style="width: 16rem;">

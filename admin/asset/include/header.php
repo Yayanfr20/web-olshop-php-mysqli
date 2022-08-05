@@ -23,7 +23,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="daftarProduk.php">Daftar Produk</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Daftar Kategori</a></li>
+            <li><a class="dropdown-item" href="daftarKategori.php">Daftar Kategori</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Riwayat Produk</a></li>
             <li><hr class="dropdown-divider"></li>

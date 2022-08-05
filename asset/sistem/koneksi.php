@@ -39,3 +39,18 @@ function pesan($data) {
 
     return mysqli_affected_rows($conn);
 }
+
+function kirimpesan($data) {
+    global $conn;
+
+    $nama = htmlspecialchars($data['nama']);
+    $email = htmlspecialchars($data['email']);
+    $pesan = htmlspecialchars($data['pesan']);
+    $tanggal = htmlspecialchars($data['date']);
+
+    $query = "INSERT INTO massage VALUES('', '$nama', '$email', '$pesan', '$tanggal')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}

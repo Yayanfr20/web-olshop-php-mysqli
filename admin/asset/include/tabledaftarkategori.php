@@ -3,18 +3,16 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Produk</th>
       <th scope="col">Kategori</th>
       <th scope="col">Opsi</th>
     </tr>
   </thead>
   <tbody>
     <?php $i = 1; ?>
-    <?php foreach($allproduk as $Produk) : ?>
+    <?php foreach($allkategoriname as $kategori) : ?>
     <tr>
       <th scope="row"><?= $i; ?></th>
-      <td><?= $Produk['nama_barang']; ?></td>
-      <td><?= $Produk['kategori_barang']; ?></td>
+      <td><?= $kategori['kategori']; ?></td>
       <td>
         <a href="" class="btn btn-primary">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
