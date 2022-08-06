@@ -8,12 +8,13 @@ $database = "Yanzshop";
 $conn = mysqli_connect($host, $username, $password, $database);
 
 // mengambil barang dari table
-function query($query) {
+function query($query)
+{
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];
 
-    while( $row = mysqli_fetch_assoc($result) ) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
     }
 
@@ -21,12 +22,13 @@ function query($query) {
 }
 
 
-function buatproduk($data) {
+function buatproduk($data)
+{
     global $conn;
 
     $nama = htmlspecialchars($data['nama']);
     $gambar = upload();
-    if( !$gambar ) {
+    if (!$gambar) {
         return false;
     }
     $harga = htmlspecialchars($data['harga']);
@@ -36,21 +38,22 @@ function buatproduk($data) {
 
     $query = "INSERT INTO barang VALUES('', '$nama', '$gambar', '$deskripsi', '$kategori', '$harga', '$hargadiskon')";
 
-    mysqli_query($conn, $query); 
+    mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
 }
 
 
-function upload() {
-        
+function upload()
+{
+
     $namaFile = $_FILES['gambar']['name'];
     $ukuranFile = $_FILES['gambar']['size'];
     $error = $_FILES['gambar']['error'];
     $tmpName = $_FILES['gambar']['tmp_name'];
 
     // cek apakah tidak ada gambar yang diupload
-    if( $error === 4 ) {
+    if ($error === 4) {
         echo "<script>
                 alert('pilih gambar terlebih dahulu!');
               </script>";
@@ -61,7 +64,7 @@ function upload() {
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
-    if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>
                 alert('yang anda upload bukan gambar!');
               </script>";
@@ -69,7 +72,7 @@ function upload() {
     }
 
     // cek jika ukurannya terlalu besar
-    if( $ukuranFile > 1000000 ) {
+    if ($ukuranFile > 1000000) {
         echo "<script>
                 alert('ukuran gambar terlalu besar!');
               </script>";
@@ -85,5 +88,33 @@ function upload() {
     move_uploaded_file($tmpName, '../asset/img/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
 
+
+function buatKategori($data)
+{
+    global $conn;
+
+    $kategori = htmlspecialchars($data['namaKategori']);
+
+    $query = "INSERT INTO kategori VALUES('id', '$kategori')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
+// editKategori 
+function editKategori($data)
+{
+    global $conn;
+    $kategori = htmlspecialchars($data["Namekategori"]);
+    $id = $data["id"];
+
+    $query = "UPDATE kategori SET kategori = '$kategori' WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }

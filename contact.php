@@ -6,15 +6,17 @@ $allkategori = query("SELECT * FROM kategori");
 if( isset($_POST['submit']) ) {
     if( kirimpesan($_POST) > 0 ) {
         echo"
-        <script>
-        alert('Berhasil dikirim');
-        </script>
+        <div class='alert alert-primary' role='alert' id='alertPesan'>
+          Pesan Anda Berhasil dikirim Tunggu email balasan dari Yanz!
+          <button class='btn btn-primary' onclick='alertPesan();'>X</button>
+        </div>
         ";
     }else {
         echo"
-        <script>
-       alert('Gagal dikirim');
-        </script>
+        <div class='alert alert-danger' role='alert' id='alertPesan'>
+          Pesan anda gagal terkirim Coba Periksan koneksi anda!
+          <button class='btn btn-danger' onclick='alertPesan();'>X</button>
+        </div>
         ";
     }
 }
@@ -69,5 +71,13 @@ if( isset($_POST['submit']) ) {
 <!-- end footer -->
 <!-- bootstrap js -->
 <script src="asset/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function alertPesan() {
+        let alertPesan = document.getElementById('alertPesan');
+
+        alertPesan.setAttribute('style', 'display:none'); 
+    }
+</script>
 </body>
 </html>
