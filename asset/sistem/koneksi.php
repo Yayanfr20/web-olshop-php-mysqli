@@ -3,17 +3,18 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "Yanzshop";
+$database = "yanz_shop";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
 // mengambil barang dari table
-function query($query) {
+function query($query)
+{
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];
 
-    while( $row = mysqli_fetch_assoc($result) ) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $rows[] = $row;
     }
 
@@ -22,7 +23,8 @@ function query($query) {
 
 
 
-function pesan($data) {
+function pesan($data)
+{
     global $conn;
     $img_pesanan = htmlspecialchars($data['img_pesanan']);
     $status = htmlspecialchars($data['status']);
@@ -40,7 +42,8 @@ function pesan($data) {
     return mysqli_affected_rows($conn);
 }
 
-function kirimpesan($data) {
+function kirimpesan($data)
+{
     global $conn;
 
     $nama = htmlspecialchars($data['nama']);

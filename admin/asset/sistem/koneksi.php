@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "Yanzshop";
+$database = "yanz_shop";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
@@ -113,6 +113,66 @@ function editKategori($data)
     $id = $data["id"];
 
     $query = "UPDATE kategori SET kategori = '$kategori' WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function editProduk($data)
+{
+    global $conn;
+    $id = $data['id'];
+    $namaBarang = htmlspecialchars($data['nama']);
+    $infoBarang = htmlspecialchars($data['deskripsi']);
+    $kategoriBarang = htmlspecialchars($data['kategori']);
+    $harga = htmlspecialchars($data['harga']);
+    $hargadiskon = htmlspecialchars($data['hargadiskon']);
+    $gambarLama = htmlspecialchars($data['gambarLama']);
+
+    // cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = upload();
+    }
+
+    $query = "UPDATE barang SET nama_barang = '$namaBarang', img_barang = '$gambar', info_barang = '$infoBarang', kategori_barang = '$kategoriBarang', harga_barang = '$harga', hargadiskon_barang = '$hargadiskon' WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function donePesanan($data)
+{
+    global $conn;
+    $id = $data['id'];
+    $status = "done";
+
+    $query = "UPDATE pesanan SET status = '$status' WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function deleteRiwayat($data)
+{
+    global $conn;
+    $id = $data['id'];
+    $query = "DELETE FROM pesanan WHERE id = $id";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function hapusMassage($data)
+{
+    global $conn;
+    $id = $data['id'];
+    $query = "DELETE FROM massage WHERE id = $id";
 
     mysqli_query($conn, $query);
 

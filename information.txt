@@ -1,0 +1,61 @@
+//information
+web ini dibuat oleh yanz 
+
+//detail website
+=asset
+-bootstrap
+
+
+//fitur user 
+-user page
+-buy produk
+-kirim pesan ke admin
+-search produk
+-produk kategori
+
+//fitur admin
+-upload produk
+-delete produk
+-update produk
+-pagination daftar produk
+
+-upload kategori
+-delete kategori
+-update kategori
+-pagination daftar kategori
+
+//tampilan dashboard
+-jumlah produk
+-jumlah kategori
+-jumlah pesanan
+-jumlah massage
+
+//page admin
+-daftar produk
+-daftar kategori
+-daftar pesanan
+-daftar kategori
+-daftar massage
+-riwayat pesanan
+
+//pesanan
+-delete pesanan
+-chat konfirmasi menggunakan api whatshapp tinggal klik 
+-done pesanan / masukan ke riwayat pesanan
+-delete riwayat pesanan
+
+//massage
+-delete massage
+-chat email pengirim tinggal klik menggunakan mailto
+
+
+//instalasi
+1.ekstrak file ke htdoc
+2.buat database dengan nama yanz_shop di localhost phpmyadmin 
+3.import database yang ada di ekstrakan ke database phpmyadmin
+
+
+//login admin
+password = admin
+username = admin
+
